@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { NzCardModule } from 'ng-zorro-antd/card';
-import { NzGridModule } from 'ng-zorro-antd/grid';
-import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
+import { SideBarComponent } from '../side-bar/side-bar.component';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [NzCardModule, NzGridModule, NzLayoutModule,NzBreadCrumbModule],
+  imports: [HeaderComponent,FooterComponent,SideBarComponent,NzLayoutModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })

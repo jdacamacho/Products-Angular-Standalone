@@ -4,17 +4,28 @@
     <nz-breadcrumb>
       <nz-breadcrumb-item></nz-breadcrumb-item>
       <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+      <nz-breadcrumb-item>Products</nz-breadcrumb-item>
     </nz-breadcrumb>
   </div>
   <nz-layout>
     <nz-sider>
-      ASDAS
+      <app-side-bar></app-side-bar>
     </nz-sider>
     <nz-content class="content-main">
-      
+      <nz-card style="width: 100%;" nzTitle="Products" [nzExtra]="">
+        <nz-card-tab>
+          <nz-tabset nzSize="large" [(nzSelectedIndex)]="index1">
+            <nz-tab nzTitle="View 1"></nz-tab>
+            <nz-tab nzTitle="View 2"></nz-tab>
+          </nz-tabset>
+        </nz-card-tab>
+        content{{ index1 }}
+      </nz-card>
     </nz-content>
   </nz-layout>
-  <app-footer></app-footer>
+  <!--
+    <app-footer></app-footer>
+  --> 
 </nz-layout>
 
 

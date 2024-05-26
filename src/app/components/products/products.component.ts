@@ -9,20 +9,23 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-products',
   standalone: true,
   imports: [HeaderComponent,FooterComponent,SideBarComponent,
             NzLayoutModule,NzBreadCrumbModule,NzTabsModule,
-            NzIconModule,NzCardModule,NzGridModule,CommonModule],
+            NzIconModule,NzCardModule,NzGridModule,CommonModule,
+            FormsModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
 export class ProductsComponent {
-  tabs = [
-    { name: 'Developer', content: 'Contenido del tab Developer' },
-    { name: 'About me', content: 'Contenido del tab About me' },
-    { name: 'Technologies', content: 'Contenido del tab Technologies' }
-  ];
+  index1 = 0;
+  index2 = 0;
+  
+
 }
+

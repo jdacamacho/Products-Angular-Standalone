@@ -1,5 +1,14 @@
 .content-main{
   background-color: white;
-  min-height: 270px;
-  max-height: 400px;
+  min-height: 300px;
 }
+
+.main-products{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.side-bar{
+  height: 0px;
+}
+

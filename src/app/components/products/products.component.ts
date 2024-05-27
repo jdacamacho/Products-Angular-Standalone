@@ -14,23 +14,24 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { Product } from '../../business/Objects/Product';
 import { ProductServiceService } from '../../business/Services/product-service.service';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
-
-
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 @Component({
   selector: 'app-products',
   standalone: true,
   imports: [HeaderComponent,FooterComponent,SideBarComponent,
             NzLayoutModule,NzBreadCrumbModule,NzTabsModule,
             NzIconModule,NzCardModule,NzGridModule,CommonModule,
-            FormsModule,NzTableModule,NzPaginationModule],
+            FormsModule,NzTableModule,NzPaginationModule,NzGridModule,
+          NzDividerModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
 export class ProductsComponent implements OnInit {
+  isVertical = false;
   index1 = 0;
   products: Product[] = [];
   currentPage = 1;
-  pageSize = 5;
+  pageSize = 10;
   totalItems = 0;
   currentItems: Product[] = [];
 

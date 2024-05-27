@@ -1,4 +1,64 @@
-<nz-layout class="main">
+<div class="container">
+  <app-header></app-header>
+  <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Library</li>
+    </ol>
+  </nav>
+  <div class="container p-4">
+    <div class="row">
+        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+            <app-side-bar></app-side-bar>
+        </div>
+
+        <div class="col-lg-10 col-md-12 mb-4 mb-md-0">
+          <nz-content class="content-main">
+            <nz-card style="width: 100%;" nzTitle="Products" [nzExtra]="">
+              <nz-card-tab>
+                <nz-tabset nzSize="large" [(nzSelectedIndex)]="index1">
+                  <nz-tab nzTitle="View 1"></nz-tab>
+                  <nz-tab nzTitle="View 2"></nz-tab>
+                </nz-tabset>
+              </nz-card-tab>
+              
+              <div *ngIf="index1 === 0">
+                <div class="container">
+                  <table class="table table table-hover">
+                    <thead class="thead-light">
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Stock</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let product of currentItems">
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price | currency }}</td>
+                        <td>{{ product.stock }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <nz-pagination [nzTotal]="totalItems" [nzPageIndex]="currentPage" [nzPageSize]="pageSize" (nzPageIndexChange)="onPageChange($event)"></nz-pagination>
+              </div>
+              <div *ngIf="index1 === 1">
+                
+                <h1>Contenido HTML para View 2</h1>
+      
+              </div>
+            </nz-card>
+          </nz-content>
+        </div>
+
+    </div>
+</div>
+  <app-footer></app-footer>
+</div>
+
+<!--  <nz-layout class="main">
+  
   <div class="child-header">
     <app-header></app-header>
     <div class="breadCrumb">
@@ -11,9 +71,11 @@
   </div>
   
   <nz-layout class="main-products">
+    
     <nz-sider class="side-bar">
       <app-side-bar></app-side-bar>
     </nz-sider>
+
     <nz-content class="content-main">
       <nz-card style="width: 100%;" nzTitle="Products" [nzExtra]="">
         <nz-card-tab>
@@ -24,14 +86,13 @@
         </nz-card-tab>
         
         <div *ngIf="index1 === 0">
-          <div class="container mt-4">
+          <div class="container">
             <table class="table table-bordered table-hover">
               <thead class="thead-light">
                 <tr>
                   <th scope="col">Name</th>
                   <th scope="col">Price</th>
                   <th scope="col">Stock</th>
-                  <th scope="col">Seller</th>
                 </tr>
               </thead>
               <tbody>
@@ -39,7 +100,6 @@
                   <td>{{ product.name }}</td>
                   <td>{{ product.price | currency }}</td>
                   <td>{{ product.stock }}</td>
-                  <td>{{ product.seller.name }} {{ product.seller.lastname }}</td>
                 </tr>
               </tbody>
             </table>
@@ -47,7 +107,7 @@
           <nz-pagination [nzTotal]="totalItems" [nzPageIndex]="currentPage" [nzPageSize]="pageSize" (nzPageIndexChange)="onPageChange($event)"></nz-pagination>
         </div>
         <div *ngIf="index1 === 1">
-          <!-- Contenido específico para View 2 -->
+          
           <h1>Contenido HTML para View 2</h1>
 
         </div>
@@ -55,8 +115,9 @@
     </nz-content>
   </nz-layout>
 
-
+  <footer>
+    <app-footer></app-footer>
+  </footer>
 
 </nz-layout>
-
-
+-->

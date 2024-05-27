@@ -1,14 +1,17 @@
-<nz-layout>
-  <app-header></app-header>
-  <div class="breadCrumb">
-    <nz-breadcrumb>
-      <nz-breadcrumb-item></nz-breadcrumb-item>
-      <nz-breadcrumb-item>Home</nz-breadcrumb-item>
-      <nz-breadcrumb-item>Products</nz-breadcrumb-item>
-    </nz-breadcrumb>
+<nz-layout class="main">
+  <div class="child-header">
+    <app-header></app-header>
+    <div class="breadCrumb">
+      <nz-breadcrumb>
+        <nz-breadcrumb-item></nz-breadcrumb-item>
+        <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+        <nz-breadcrumb-item>Products</nz-breadcrumb-item>
+      </nz-breadcrumb>
+    </div>
   </div>
-  <nz-layout>
-    <nz-sider>
+  
+  <nz-layout class="main-products">
+    <nz-sider class="side-bar">
       <app-side-bar></app-side-bar>
     </nz-sider>
     <nz-content class="content-main">
@@ -19,13 +22,41 @@
             <nz-tab nzTitle="View 2"></nz-tab>
           </nz-tabset>
         </nz-card-tab>
-        content{{ index1 }}
+        
+        <div *ngIf="index1 === 0">
+          <div class="container mt-4">
+            <table class="table table-bordered table-hover">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Stock</th>
+                  <th scope="col">Seller</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let product of currentItems">
+                  <td>{{ product.name }}</td>
+                  <td>{{ product.price | currency }}</td>
+                  <td>{{ product.stock }}</td>
+                  <td>{{ product.seller.name }} {{ product.seller.lastname }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <nz-pagination [nzTotal]="totalItems" [nzPageIndex]="currentPage" [nzPageSize]="pageSize" (nzPageIndexChange)="onPageChange($event)"></nz-pagination>
+        </div>
+        <div *ngIf="index1 === 1">
+          <!-- Contenido específico para View 2 -->
+          <h1>Contenido HTML para View 2</h1>
+
+        </div>
       </nz-card>
     </nz-content>
   </nz-layout>
-  <!--
-    <app-footer></app-footer>
-  --> 
+
+
+
 </nz-layout>
 
 

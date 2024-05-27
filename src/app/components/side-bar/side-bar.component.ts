@@ -5,7 +5,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { FormsModule } from '@angular/forms';
 import { NzIconService } from 'ng-zorro-antd/icon';
-import { HomeOutline, ShopOutline } from '@ant-design/icons-angular/icons';
+import { HomeOutline, ShopOutline, UserOutline} from '@ant-design/icons-angular/icons';
 
 @Component({
   selector: 'app-side-bar',
@@ -18,5 +18,6 @@ export class SideBarComponent {
   constructor(private iconService: NzIconService) {
     this.iconService.addIcon(HomeOutline);
     this.iconService.addIcon(ShopOutline);
+    this.iconService.addIcon(UserOutline);
   }
 }

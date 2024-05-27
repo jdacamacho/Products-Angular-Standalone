@@ -1,4 +1,4 @@
-import { Seller } from "./Seller";
+import { Seller } from "../Objects/seller";
 
 export class Product {
     code!: number;

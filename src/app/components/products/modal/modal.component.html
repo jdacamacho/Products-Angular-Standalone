@@ -1,0 +1,20 @@
+<button nz-button nzType="link" (click)="showModal(product)">
+    <span nz-icon nzType="eye" nzTheme="outline"></span>
+</button>
+
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Product Information" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+        <nz-descriptions nzTitle="{{product.name}}" nzLayout="vertical">
+            <nz-descriptions-item nzTitle="Code"> {{product.code}} </nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Name">{{product.name}}</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Category">{{product.category}}</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Price">{{product.price}}</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Stock">{{product.stock}}</nz-descriptions-item>
+          </nz-descriptions>
+          <nz-descriptions nzTitle="Seller" nzLayout="vertical">
+            <nz-descriptions-item nzTitle="Code"> {{product.seller.nit}} </nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Name">{{product.seller.name + ' ' +product.seller.lastname}}</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Company Name">{{product.seller.companyName }}</nz-descriptions-item>
+          </nz-descriptions>
+    </ng-container>
+</nz-modal>

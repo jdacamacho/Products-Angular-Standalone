@@ -11,7 +11,8 @@ import { ProductServiceService } from '../../business/Services/product-service.s
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { SideBarComponent } from '../side-bar/side-bar.component';
 import { BreadCrumbComponent } from './bread-crumb/bread-crumb.component';
-
+import { ModalComponent } from './modal/modal.component';
+import { NzInputModule } from 'ng-zorro-antd/input'
 
 @Component({
     selector: 'app-products',
@@ -20,7 +21,8 @@ import { BreadCrumbComponent } from './bread-crumb/bread-crumb.component';
     styleUrl: './products.component.css',
     imports: [HeaderComponent, FooterComponent, NzTabsModule,
         NzIconModule, NzCardModule, CommonModule,
-        FormsModule, NzPaginationModule, SideBarComponent,BreadCrumbComponent]
+        FormsModule, NzPaginationModule, SideBarComponent,BreadCrumbComponent,
+        ModalComponent,NzInputModule]
 })
 export class ProductsComponent implements OnInit {
   isVertical = false;

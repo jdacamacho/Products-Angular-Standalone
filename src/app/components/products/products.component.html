@@ -36,7 +36,7 @@
                         <td>{{ product.name }}</td>
                         <td>{{ product.price | currency }}</td>
                         <td> {{product.stock}} </td>
-                        <td> <span nz-icon nzType="eye" nzTheme="outline"> </span></td>
+                        <td> <app-modal [product]="product"></app-modal> </td>
                       </tr>
                     </tbody>
                   </table>
@@ -44,10 +44,18 @@
                 </div>
 
               </div>
+
               <div *ngIf="index1 === 1">
-                
-                <div class="button-register p-2">
-                  <button type="button" class="btn btn-primary">Register Product</button>
+                <div class="button-register pb-4">
+                  <button type="button" class="btn btn-outline-primary">Register Product</button>
+                </div>
+                <div class="search-bar pb-2">
+                  <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+                    <input type="text" nz-input placeholder="input search text" />
+                  </nz-input-group>
+                  <ng-template #suffixIconButton>
+                    <button nz-button nzType="primary" nzSearch><span nz-icon nzType="search"></span></button>
+                  </ng-template>
                 </div>
                 <div class="container">
                   <table class="table table table-hover">

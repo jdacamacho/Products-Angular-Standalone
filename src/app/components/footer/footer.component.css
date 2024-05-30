@@ -1,5 +1,5 @@
 footer{
-    background-color: #3e4179;
+    background-color: #0b2545;
     text-align: center;
     position: relative;
     bottom: 0px;
@@ -8,13 +8,13 @@ footer{
 }
 
 p{
-    color: #bdd5e2;
+    color: #dcdcdd;
 }
 
 .title{
-    color: #88afc4;
+    color: #dcdcdd;
 }
 
 .copyRight {
-    color: #88afc4;
+    color: #dcdcdd;
 }

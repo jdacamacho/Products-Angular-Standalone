@@ -1,21 +1,34 @@
-<ul class="nav flex-column p-2">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">
-        <span nz-icon nzType="home" nzTheme="outline"></span>
-        <span>Home</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <span nz-icon nzType="shop" nzTheme="outline"></span>
-        <span>products</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <span nz-icon nzType="home" nzTheme="outline"></span>
-        <span>Sellers</span>
-      </a>
-    </li>
+<ul class="side-bar" nz-menu nzMode="inline">
+  <li nz-menu-item>
+    <span nz-icon nzType="home"></span>
+    <span>Home</span>
+  </li>
+  <li nz-submenu nzTitle="Products" nzIcon="shop">
+    <ul>
+      <li nz-menu-item>
+        <span nz-icon nzType="eye"></span>
+        <span>Take a look</span>
+      </li>
+      <li nz-menu-item>
+        <span nz-icon nzType="plus"></span>
+        <span>Register</span>
+      </li>
+    </ul>
+  </li>
+  <li nz-submenu nzTitle="Sellers" nzIcon="user">
+    <ul>
+      <li nz-menu-item>
+        <span nz-icon nzType="eye"></span>
+        <span>Take a look</span>
+      </li>
+      <li nz-menu-item>
+        <span nz-icon nzType="plus"></span>
+        <span>Register</span>
+      </li>
+    </ul>
+  </li>
+  <li nz-menu-item>
+    <span nz-icon nzType="user"></span>
+    <span>Developer</span>
+  </li>
 </ul>
-

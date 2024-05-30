@@ -11,21 +11,23 @@
         </div>
 
         <div class="col-lg-10 col-md-12 mb-4">
-            <nz-card style="width: 100%;" nzTitle="Products" [nzExtra]="">
+            <nz-card class="card-products" style="width: 100%;" nzTitle="Products" [nzExtra]="">
               <nz-card-tab>
                 <nz-tabset nzSize="large" [(nzSelectedIndex)]="index1">
-                  <nz-tab nzTitle="View 1"></nz-tab>
-                  <nz-tab nzTitle="View 2"></nz-tab>
+                  <nz-tab nzTitle="Inventory"></nz-tab>
+                  <nz-tab nzTitle="Manage"></nz-tab>
                 </nz-tabset>
               </nz-card-tab>
               
               <div *ngIf="index1 === 0">
+
                 <div class="container">
                   <table class="table table table-hover">
                     <thead class="thead-light">
                       <tr>
                         <th scope="col">Name</th>
                         <th scope="col">Price</th>
+                        <th scope="col">Stock</th>
                         <th scope="col">See product</th>
                       </tr>
                     </thead>
@@ -33,16 +35,42 @@
                       <tr *ngFor="let product of currentItems">
                         <td>{{ product.name }}</td>
                         <td>{{ product.price | currency }}</td>
+                        <td> {{product.stock}} </td>
                         <td> <span nz-icon nzType="eye" nzTheme="outline"> </span></td>
                       </tr>
                     </tbody>
                   </table>
+                  <nz-pagination [nzPageIndex]="currentPage" [nzTotal]="totalItems" nzShowQuickJumper (nzPageIndexChange)="onPageChange($event)"></nz-pagination>
                 </div>
-                <nz-pagination [nzTotal]="totalItems" [nzPageIndex]="currentPage" [nzPageSize]="pageSize" (nzPageIndexChange)="onPageChange($event)"></nz-pagination>
+
               </div>
               <div *ngIf="index1 === 1">
                 
-                <h1>Contenido HTML para View 2</h1>
+                <div class="button-register p-2">
+                  <button type="button" class="btn btn-primary">Register Product</button>
+                </div>
+                <div class="container">
+                  <table class="table table table-hover">
+                    <thead class="thead-light">
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let product of currentItems">
+                        <td>{{ product.name }}</td>
+                        <td>
+                          <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-warning">Update</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                          </div> 
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <nz-pagination [nzPageIndex]="currentPage" [nzTotal]="totalItems" nzShowQuickJumper (nzPageIndexChange)="onPageChange($event)"></nz-pagination>
+                </div>
       
               </div>
             </nz-card>
